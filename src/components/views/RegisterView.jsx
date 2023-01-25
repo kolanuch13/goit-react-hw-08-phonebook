@@ -34,50 +34,52 @@ const RegisterView = () => {
     return (
         <section>
             <Heading>Register</Heading>
-            <FormControl onSubmit={handleSubmit}>
-                <FormLabel>
-                    Name
-                    <Input
-                        type="name"
-                        name="name"
-                        value={name}
-                        onChange={handleChange}
-                    />
-                </FormLabel>
-                <FormLabel>
-                    Email
-                    <Input
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={handleChange}
-                    />
-                </FormLabel>
-                <FormLabel>
-                    Password
-                    <Input
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={handleChange}
-                        pattern="^[0-9][a-z][A-Z][0-9]{8}$"
-                    />
-                </FormLabel>
-                <Button
-                    type="submit"
-                    as="button"
-                    p={4}
-                    color="white"
-                    fontWeight="bold"
-                    borderRadius="md"
-                    bgGradient="linear(to-r, teal.500, green.500)"
-                    _hover={{
-                        bgGradient: 'linear(to-r, red.500, yellow.500)',
-                    }}
-                >
-                    Submit
-                </Button>
-            </FormControl>
+            <form onSubmit={handleSubmit}>
+                <FormControl>
+                    <FormLabel>
+                        Name
+                        <Input
+                            type="name"
+                            name="name"
+                            value={name}
+                            onChange={handleChange}
+                        />
+                    </FormLabel>
+                    <FormLabel>
+                        Email
+                        <Input
+                            type="email"
+                            name="email"
+                            value={email}
+                            onChange={handleChange}
+                        />
+                    </FormLabel>
+                    <FormLabel>
+                        Password
+                        <Input
+                            type="password"
+                            name="password"
+                            value={password}
+                            onChange={handleChange}
+                            pattern="^[0-9][a-z][A-Z][0-9]{8}$"
+                        />
+                    </FormLabel>
+                    <Button
+                        type="submit"
+                        as="button"
+                        p={4}
+                        color="white"
+                        fontWeight="bold"
+                        borderRadius="md"
+                        bgGradient="linear(to-r, teal.500, green.500)"
+                        _hover={{
+                            bgGradient: 'linear(to-r, red.500, yellow.500)',
+                        }}
+                    >
+                        Submit
+                    </Button>
+                </FormControl>
+            </form>
         </section>
     );
 };

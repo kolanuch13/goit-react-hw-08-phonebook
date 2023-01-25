@@ -36,40 +36,42 @@ const LoginView = () => {
     return (
         <section>
             <Heading>Log in</Heading>
-            <FormControl onSubmit={handleSubmit}>
-                <FormLabel>
-                    Email
-                    <Input
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={handleChange}
-                    />
-                </FormLabel>
-                <FormLabel>
-                    Password
-                    <Input
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={handleChange}
-                    />
-                </FormLabel>
-                <Button
-                    type="submit"
-                    as="button"
-                    p={4}
-                    color="white"
-                    fontWeight="bold"
-                    borderRadius="md"
-                    bgGradient="linear(to-r, teal.500, green.500)"
-                    _hover={{
-                        bgGradient: 'linear(to-r, red.500, yellow.500)',
-                    }}
-                >
-                    Підтверджую
-                </Button>
-            </FormControl>
+            <form onSubmit={handleSubmit}>
+                <FormControl>
+                    <FormLabel>
+                        Email
+                        <Input
+                            type="email"
+                            name="email"
+                            value={email}
+                            onChange={handleChange}
+                        />
+                    </FormLabel>
+                    <FormLabel>
+                        Password
+                        <Input
+                            type="password"
+                            name="password"
+                            value={password}
+                            onChange={handleChange}
+                        />
+                    </FormLabel>
+                    <Button
+                        type="submit"
+                        as="button"
+                        p={4}
+                        color="white"
+                        fontWeight="bold"
+                        borderRadius="md"
+                        bgGradient="linear(to-r, teal.500, green.500)"
+                        _hover={{
+                            bgGradient: 'linear(to-r, red.500, yellow.500)',
+                        }}
+                    >
+                        LogIn
+                    </Button>
+                </FormControl>
+            </form>
         </section>
     );
 }
