@@ -24,7 +24,7 @@ const ContactList = () => {
           let markup = (
             <li key={contact.id} className={css.contactItem}>
               <span>
-                {contact.name}: <a type='tel'>{contact.number}</a>
+                {contact.name}: {contact.number}
               </span>
               <Button
                 type="button"

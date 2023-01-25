@@ -4,7 +4,6 @@ import { getContacts } from 'redux/contacts/selectors';
 import {
     Input,
     Button,
-    Heading,
     FormControl,
     FormLabel,
 } from '@chakra-ui/react';
