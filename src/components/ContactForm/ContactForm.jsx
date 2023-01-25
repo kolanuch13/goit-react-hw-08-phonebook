@@ -32,42 +32,44 @@ const ContactForm =  () => {
             }
             return (
                 <div>
-                    <FormControl action="" onSubmit={handleSubmit} id="myform">
-                        <FormLabel>
-                            Name
-                            <Input
-                                type="text"
-                                name="name"
-                                pattern="^[a-zA-Z]+\s[a-zA-Z]+$"
-                                placeholder="Clarck Kent"
-                                required
-                            />
-                        </FormLabel>
-                        <FormLabel>
-                            Number
-                            <Input
-                                type="text"
-                                name="number"
-                                pattern="^(?:\+38)?(0\d{9})$"
-                                placeholder="+380111111111"
-                                required
-                            />
-                        </FormLabel>
-                        <Button
-                            type="submit"
-                            as="button"
-                            p={4}
-                            color="white"
-                            fontWeight="bold"
-                            borderRadius="md"
-                            bgGradient="linear(to-r, teal.500, green.500)"
-                            _hover={{
-                                bgGradient: 'linear(to-r, red.500, yellow.500)',
-                            }}
-                        >
-                            Add contact
-                        </Button>
-                    </FormControl>
+                    <form action="" onSubmit={handleSubmit} id="myform">
+                        <FormControl>
+                          <FormLabel>
+                              Name
+                              <Input
+                                  type="text"
+                                  name="name"
+                                  pattern="^[a-zA-Z]+\s[a-zA-Z]+$"
+                                  placeholder="Clarck Kent"
+                                  required
+                              />
+                          </FormLabel>
+                          <FormLabel>
+                              Number
+                              <Input
+                                  type="text"
+                                  name="number"
+                                  pattern="^(?:\+38)?(0\d{9})$"
+                                  placeholder="+380111111111"
+                                  required
+                              />
+                          </FormLabel>
+                          <Button
+                              type="submit"
+                              as="button"
+                              p={4}
+                              color="white"
+                              fontWeight="bold"
+                              borderRadius="md"
+                              bgGradient="linear(to-r, teal.500, green.500)"
+                              _hover={{
+                                  bgGradient: 'linear(to-r, red.500, yellow.500)',
+                              }}
+                          >
+                              Add contact
+                          </Button>
+                        </FormControl>
+                    </form>
                 </div>
             );  
 }
