@@ -22,26 +22,27 @@ const App = () => {
       >
           <header>
               <p>Welcome {user ? user : '...'}</p>
-                  <nav>
+        <nav>
+          {/* className="link" */}
                     <Tabs spacing="25px">
                           <TabList>
                             <Tab>
-                              <NavLink className="link" to="/" end>
+                              <NavLink to="/" end>
                                   Home
                               </NavLink>
                             </Tab>
                             <Tab>
-                              <NavLink className="link" to="/registered">
+                              <NavLink to="/registered">
                                   Register
                               </NavLink>
                             </Tab>
                             <Tab>
-                              <NavLink className="link" to="/logIn">
+                              <NavLink to="/logIn">
                                   Login
                               </NavLink>
                             </Tab>
                             <Tab>
-                              <NavLink className="link" to="/contacts">
+                              <NavLink to="/contacts">
                                   Contacts
                               </NavLink>
                             </Tab>
