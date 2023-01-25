@@ -5,36 +5,57 @@ import LoginView from './views/LoginView';
 import ContactsView from './views/ContactsView';
 import {getUsername} from '../redux/auth/auth-selectors'
 import { useSelector } from 'react-redux';
+import { Tabs, TabList, Tab } from '@chakra-ui/react';
 
 const App = () => {
   const user = useSelector(getUsername);
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-        flexDirection: 'column',
-      }}
-    >
-      <header>
-        <p>Welcome {user ? user : "..."}</p>
-        <nav>
-          <NavLink className="link" to="/" end>Home</NavLink>
-          <NavLink className="link" to="/registered">Register</NavLink>
-          <NavLink className="link" to="/logIn">LogIn</NavLink>
-          <NavLink className="link" to="/contacts">Contacts</NavLink>
-        </nav>
-      </header>
-      <Routes>
-        <Route exact path="/" element={<HomeView/>} />
-        <Route exact path="/registered" element={<RegisterView />} />
-        <Route exact path="/login" element={<LoginView />} />
-        <Route exact path="/contacts" element={<ContactsView />} />
-      </Routes>
-    </div>
+      <div
+          style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              fontSize: 40,
+              color: '#010101',
+              flexDirection: 'column',
+          }}
+      >
+          <header>
+              <p>Welcome {user ? user : '...'}</p>
+                  <nav>
+                    <Tabs spacing="25px">
+                          <TabList>
+                            <Tab>
+                              <NavLink className="link" to="/" end>
+                                  Home
+                              </NavLink>
+                            </Tab>
+                            <Tab>
+                              <NavLink className="link" to="/registered">
+                                  Register
+                              </NavLink>
+                            </Tab>
+                            <Tab>
+                              <NavLink className="link" to="/logIn">
+                                  Login
+                              </NavLink>
+                            </Tab>
+                            <Tab>
+                              <NavLink className="link" to="/contacts">
+                                  Contacts
+                              </NavLink>
+                            </Tab>
+                          </TabList>
+                    </Tabs>
+                  </nav>
+          </header>
+          <Routes>
+              <Route exact path="/" element={<HomeView />} />
+              <Route exact path="/registered" element={<RegisterView />} />
+              <Route exact path="/login" element={<LoginView />} />
+              <Route exact path="/contacts" element={<ContactsView />} />
+          </Routes>
+      </div>
   );
 };
 

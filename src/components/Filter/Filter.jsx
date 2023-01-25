@@ -3,7 +3,11 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getFilter } from "redux/contacts/selectors";
 import { setFilter } from "redux/contacts/contactSlice"
-import css from './Filter.module.css';
+import {
+    Input,
+    Heading,
+} from '@chakra-ui/react';
+
 
 
 const Filter = () => {
@@ -15,13 +19,12 @@ const Filter = () => {
   }
     
   return (
-    <div className={css.filterWrapper}>
-      <span>Search by Name</span>
-      <input
+    <div>
+      <Heading>Search by Name</Heading>
+      <Input
         type="text"
         value={filter}
         onChange={handleChange}
-        className={css.filterInput}
       />
     </div>
   );

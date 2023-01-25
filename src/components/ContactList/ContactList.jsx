@@ -2,6 +2,10 @@ import css from './ContactList.module.css';
 import {getContacts, getFilter} from "redux/contacts/selectors";
 import { deleteContact } from 'redux/contacts/operations';
 import { useDispatch, useSelector } from "react-redux";
+import {
+    Button,
+} from '@chakra-ui/react';
+
 
 
 const ContactList = () => {
@@ -20,16 +24,16 @@ const ContactList = () => {
           let markup = (
             <li key={contact.id} className={css.contactItem}>
               <span>
-                {contact.name}: {contact.number}
+                {contact.name}: <a type='tel'>{contact.number}</a>
               </span>
-              <button
+              <Button
                 type="button"
                 onClick={handleDelete}
                 id={contact.id}
                 className={css.contactButton}
               >
                 Delete
-              </button>
+              </Button>
             </li>
           );
           return markup;

@@ -1,7 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { getContacts } from 'redux/contacts/selectors';
-import css from './ContactForm.module.css';
+import {
+    Input,
+    Button,
+    Heading,
+    FormControl,
+    FormLabel,
+} from '@chakra-ui/react';
+
 
 const ContactForm =  () => {
     const dispatch = useDispatch();
@@ -13,7 +20,6 @@ const ContactForm =  () => {
         const require = contacts.filter(contact => contact.name.toLowerCase() === form.elements.name.value);
 
         if (require.length === 0) {
-            console.log(form.elements.number.value)
             dispatch(
               addContact({
                 name: form.elements.name.value,
@@ -26,42 +32,44 @@ const ContactForm =  () => {
                 form.reset();
             }
             return (
-              <div>
-                <form
-                  action=""
-                  onSubmit={handleSubmit}
-                  className={css.contactForm}
-                  id="myform"
-                >
-                  <label className={css.contactLabel}>
-                    Name
-                    <input
-                      className={css.contactInput}
-                      type="text"
-                      name="name"
-                      pattern="^[a-zA-Z]+\s[a-zA-Z]+$"
-                      placeholder="Clarck Kent"
-                      required
-                    />
-                  </label>
-                  <div className={css.errorMessage}></div>
-                  <label className={css.contactLabel}>
-                    Number
-                    <input
-                      className={css.contactInput}
-                      type="text"
-                      name="number"
-                      pattern="^(?:\+38)?(0\d{9})$"
-                      placeholder="+380111111111"
-                      required
-                    />
-                  </label>
-                  <div className={css.errorMessage}></div>
-                  <button type="submit" className={css.contactButton}>
-                    Add contact
-                  </button>
-                </form>
-              </div>
+                <div>
+                    <FormControl action="" onSubmit={handleSubmit} id="myform">
+                        <FormLabel>
+                            Name
+                            <Input
+                                type="text"
+                                name="name"
+                                pattern="^[a-zA-Z]+\s[a-zA-Z]+$"
+                                placeholder="Clarck Kent"
+                                required
+                            />
+                        </FormLabel>
+                        <FormLabel>
+                            Number
+                            <Input
+                                type="text"
+                                name="number"
+                                pattern="^(?:\+38)?(0\d{9})$"
+                                placeholder="+380111111111"
+                                required
+                            />
+                        </FormLabel>
+                        <Button
+                            type="submit"
+                            as="button"
+                            p={4}
+                            color="white"
+                            fontWeight="bold"
+                            borderRadius="md"
+                            bgGradient="linear(to-r, teal.500, green.500)"
+                            _hover={{
+                                bgGradient: 'linear(to-r, red.500, yellow.500)',
+                            }}
+                        >
+                            Add contact
+                        </Button>
+                    </FormControl>
+                </div>
             );  
 }
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from "../../redux/auth/auth-operations"
+import { Input, Button, Heading, FormControl, FormLabel } from '@chakra-ui/react';
 
 const RegisterView = () => {
     const dispatch = useDispatch()
@@ -32,38 +33,51 @@ const RegisterView = () => {
 
     return (
         <section>
-            <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
+            <Heading>Register</Heading>
+            <FormControl onSubmit={handleSubmit}>
+                <FormLabel>
                     Name
-                    <input
+                    <Input
                         type="name"
                         name="name"
                         value={name}
                         onChange={handleChange}
                     />
-                </label>
-                <label onSubmit={handleSubmit}>
+                </FormLabel>
+                <FormLabel>
                     Email
-                    <input
+                    <Input
                         type="email"
                         name="email"
                         value={email}
                         onChange={handleChange}
                     />
-                </label>
-                <label htmlFor="">
+                </FormLabel>
+                <FormLabel>
                     Password
-                    <input
+                    <Input
                         type="password"
                         name="password"
                         value={password}
                         onChange={handleChange}
                         pattern="^[0-9][a-z][A-Z][0-9]{8}$"
                     />
-                </label>
-                <button type="submit">Submit</button>
-            </form>
+                </FormLabel>
+                <Button
+                    type="submit"
+                    as="button"
+                    p={4}
+                    color="white"
+                    fontWeight="bold"
+                    borderRadius="md"
+                    bgGradient="linear(to-r, teal.500, green.500)"
+                    _hover={{
+                        bgGradient: 'linear(to-r, red.500, yellow.500)',
+                    }}
+                >
+                    Submit
+                </Button>
+            </FormControl>
         </section>
     );
 };
