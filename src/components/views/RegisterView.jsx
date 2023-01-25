@@ -61,7 +61,6 @@ const RegisterView = () => {
                             name="password"
                             value={password}
                             onChange={handleChange}
-                            pattern="^[0-9][a-z][A-Z][0-9]{8}$"
                         />
                     </FormLabel>
                     <Button

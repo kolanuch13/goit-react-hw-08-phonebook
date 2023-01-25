@@ -49,7 +49,6 @@ const ContactForm =  () => {
                               <Input
                                   type="text"
                                   name="number"
-                                  pattern="^(?:\+38)?(0\d{9})$"
                                   placeholder="+380111111111"
                                   required
                               />
