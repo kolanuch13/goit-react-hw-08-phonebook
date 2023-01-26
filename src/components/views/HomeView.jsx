@@ -73,11 +73,13 @@ const HomeView = () => {
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: "center",
-                    gap: "30px"
+                    alignItems: 'center',
+                    gap: '30px',
                 }}
             >
-                <Heading>Hey {user},<br/> you can log out here.</Heading>
+                <Heading>
+                    Hey {user},<br /> you can log out here.
+                </Heading>
                 <Button
                     type="button"
                     onClick={() => {
@@ -92,7 +94,7 @@ const HomeView = () => {
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    maxWidth: "80vw"
+                    maxWidth: '80vw',
                 }}
             >
                 <div>
@@ -100,6 +102,9 @@ const HomeView = () => {
                         onMouseDown={startDrawing}
                         onMouseUp={endDrawing}
                         onMouseMove={draw}
+                        touchDown={startDrawing}
+                        touchUp={endDrawing}
+                        touchMove={draw}
                         ref={canvasRef}
                         width={`1280px`}
                         height={`720px`}
