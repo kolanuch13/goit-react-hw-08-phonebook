@@ -10,11 +10,11 @@ import {
 } from '@chakra-ui/react';
 
 
+
 const LoginView = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const handleChange = ({ target: { name, value } }) => {
         switch (name) {
             case 'email':
@@ -24,14 +24,15 @@ const LoginView = () => {
             default:
                 return;
         }
-    }
+    };
 
     const handleSubmit = event => {
         event.preventDefault();
         dispatch(logIn({ email, password }));
         setEmail('');
         setPassword('');
-    }
+
+    };
 
     return (
         <section>

@@ -25,7 +25,6 @@ const RegisterView = () => {
     const handleSubmit = event => {
         event.preventDefault();
         dispatch(register({ name, email, password }));
-        console.log({ name, email, password });
         setName('');
         setEmail('');
         setPassword('');
